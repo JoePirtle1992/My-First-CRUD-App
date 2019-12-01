@@ -3,11 +3,13 @@ const AlbumSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique: true
+        // unique would force it to only have one
+        // unique: true 
     },
     album: String,
     song: String,
-    year: Number
+    year: Number,
+    imageLink: String
 })
 
 const Album = mongoose.model('Album', AlbumSchema);

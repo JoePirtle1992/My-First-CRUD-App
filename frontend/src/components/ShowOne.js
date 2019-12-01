@@ -56,6 +56,7 @@ class ShowOne extends Component {
               <h1>{individual.album}</h1>
               <h1>{individual.song}</h1>
               <h1>{individual.year}</h1>
+              <img className="image" src={individual.imageLink} alt=""/>
               <button onClick={this.deletionHell} value={individual._id}>
                 Delete It
               </button>

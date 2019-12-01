@@ -11,6 +11,7 @@ class UpdateItem extends Component {
       album: "",
       song: "",
       year: "",
+      imageLink: "",
       goBack: false
     };
   }
@@ -23,7 +24,8 @@ class UpdateItem extends Component {
           name: res.data.data.name,
           album: res.data.data.album,
           song: res.data.data.song,
-          year: res.data.data.year
+          year: res.data.data.year,
+          imageLink: res.data.data.imageLink
         });
         console.log(this.state);
       });
@@ -36,7 +38,8 @@ class UpdateItem extends Component {
         name: this.state.name,
         album: this.state.album,
         song: this.state.song,
-        year: this.state.year
+        year: this.state.year,
+        imageLink: this.state.imageLink
       })
       .then(res => {
         this.setState({ goBack: true });
@@ -55,6 +58,10 @@ class UpdateItem extends Component {
   };
   getYear = e => {
     this.setState({ year: e.target.value });
+    console.log(this.state);
+  };
+  getImageLink = e => {
+    this.setState({ imageLink: e.target.value });
     console.log(this.state);
   };
   render() {
@@ -89,6 +96,13 @@ class UpdateItem extends Component {
               type="text"
               name="year"
               onChange={this.getYear}
+              id=""
+            ></input>
+            <h1>ImageLink: </h1>
+            <input
+              type="text"
+              name="imageLink"
+              onChange={this.getImageLink}
               id=""
             ></input>
             <button>Add It!</button>

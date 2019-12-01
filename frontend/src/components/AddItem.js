@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 class AddItem extends Component {
@@ -12,6 +12,7 @@ class AddItem extends Component {
       album: "",
       song: "",
       year: "",
+      imageLink: "",
       goBack: false
     };
   }
@@ -23,7 +24,8 @@ class AddItem extends Component {
         name: this.state.name,
         album: this.state.album,
         song: this.state.song,
-        year: this.state.year
+        year: this.state.year,
+        imageLink: this.state.imageLink
       })
       .then(res => {
         this.setState({ goBack: true });
@@ -45,6 +47,10 @@ class AddItem extends Component {
   };
   getYear = e => {
     this.setState({ year: e.target.value });
+    console.log(this.state);
+  };
+  getimageLink = e => {
+    this.setState({ imageLink: e.target.value });
     console.log(this.state);
   };
 
@@ -82,11 +88,16 @@ class AddItem extends Component {
               onChange={this.getYear}
               id=""
             ></input>
+            <h1>Image Link: </h1>
+            <input
+              type="text"
+              name="year"
+              onChange={this.getimageLink}
+              id=""
+            ></input>
             <button>Add It!</button>
           </form>
-          <Link to="/">
-            Go Back
-          </Link>
+          <Link to="/">Go Back</Link>
         </div>
       );
     } else {
