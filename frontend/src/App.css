@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.goof {
+  background-color: black;
+  font-size: 3em;
+  text-align: center;
+  color: white;
+}
+
+.everyOne-master {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.individual {
+  border: solid 2px green;
+  padding: 1em;
+  text-align: center;
+}
+
+a.baby {
+  color: white;
+}
